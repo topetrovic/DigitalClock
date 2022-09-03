@@ -20,6 +20,7 @@ namespace DigitalClock
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+            dateLabel.Text = DateTime.Now.ToString("dd.MM.yyyy");
         }
 
         private void timeLabel_Click(object sender, EventArgs e)
