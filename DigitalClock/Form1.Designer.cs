@@ -29,8 +29,10 @@ namespace DigitalClock
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timeLabel
@@ -42,7 +44,7 @@ namespace DigitalClock
             this.timeLabel.Size = new System.Drawing.Size(593, 83);
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Text = "20:00:00";
-           
+            this.timeLabel.Click += new System.EventHandler(this.timeLabel_Click);
             // 
             // dateLabel
             // 
@@ -54,6 +56,11 @@ namespace DigitalClock
             this.dateLabel.TabIndex = 1;
             this.dateLabel.Text = "20.20.2020.";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -63,6 +70,7 @@ namespace DigitalClock
             this.Controls.Add(this.timeLabel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,6 +80,7 @@ namespace DigitalClock
 
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -17,6 +17,19 @@ namespace DigitalClock
             InitializeComponent();
         }
 
-      
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void timeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }
